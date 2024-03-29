@@ -27,9 +27,13 @@ app.post("/login", (req, res) => {
 })
 
 app.post('/register', (req,res) => {
-  EmployeeModel.create(req.body)
-   console.log(req.body)
-  
+    const{name,email,password}=req.body;
+    console.log(name,email,password)
+  EmployeeModel.create({
+    name,
+    email,
+    password,
+    })
   .then(employees => res.json(employees))
   .catch(err => {console.error(err);
     res.status(500).json({ error: 'An error occurred while creating the employee record.' });

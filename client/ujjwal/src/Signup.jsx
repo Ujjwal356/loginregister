@@ -17,8 +17,9 @@ const Signup = () => {
    
 
   const handleSubmit = (e) => {
-
     e.preventDefault();
+
+    console.log(name, email, password)
     axios.post('http://localhost:3001/register', {name, email, password})
     .then(result => {
       console.log(result);
@@ -54,7 +55,7 @@ const Signup = () => {
 
       <div className="inputBox"> 
 
-<input type="email" id="email" name="email" onChange={(e)=>setName(e.target.value)} required autoComplete="off"/> <i>email</i> 
+<input type="email" id="email" name="email" onChange={(e)=>setemail(e.target.value)} required autoComplete="off"/> <i>email</i> 
 
 </div> 
 

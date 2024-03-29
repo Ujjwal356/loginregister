@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 
 function Login(){
-  const [name,setName]=useState()
+  const [email,setemail]=useState()
   const [password,setPassword]=useState()
   const navigate = useNavigate()
   // const [name,setName]=useState()
@@ -14,7 +14,7 @@ function Login(){
   const handleSubmit = (e) => {
 
     e.preventDefault();
-    axios.post('http://localhost:3001/login', {name, password})
+    axios.post('http://localhost:3001/login', {email, password})
     .then(result => {
       console.log(result)
       if(result.data === "Success"){
@@ -45,7 +45,7 @@ function Login(){
       <form onSubmit={handleSubmit}>
       <div className="inputBox"> 
 
-       <input type="text" id="username" name="username" onChange={(e)=>setName(e.target.value)} required autoComplete="off"/> <i>Username</i> 
+       <input type="email" id="email" name="email" onChange={(e)=>setemail(e.target.value)} required autoComplete="off"/> <i>email</i> 
 
       </div> 
 
